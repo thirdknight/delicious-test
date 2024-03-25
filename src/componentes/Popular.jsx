@@ -23,7 +23,7 @@ function Popular() {
     localStorage.setItem("popular", JSON.stringify(data.recipes))
     // console.log(data);
     setPopular(data.recipes);
-    console.log(data.recipes);
+    // console.log(data.recipes);
   }
  }
 
@@ -41,7 +41,7 @@ function Popular() {
             {popular.map((recipe) => {
               return(
                 <SplideSlide key={recipe.id}>
-                  <Link to={"(recipe/" + recipe.id}>
+                  <Link to={"/recipe/" + recipe.id}>
                     <Card>
                       <p>{recipe.title}</p>
                       <img src={recipe.image} alt={recipe.title}></img>
@@ -95,7 +95,7 @@ const Gradient = styled.div `
   z-index: 3;
   position: absolute;
   width: 100%;
-  heigth: 100%;
+  height: 100%;
   background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
 `
 

@@ -17,22 +17,26 @@ function Cuisine() {
 
   useEffect(() => {
     getCuisine(params.type);
-    // console.log(params.type);
+    console.log(params.type);
   }, [params.type]);
 
-  console.log(cuisine);
-  return <Grid>
-
-    
+  // console.log(cuisine);
+  return(
+    <Grid>  
       {cuisine.map((item) => {
         return(
           <Card key={item.id}>
-            <img src={item.image} alt="" />
-            <h4>{item.title}</h4>
+              <Link to={"/recipe/" + item.id}>
+              <img src={item.image} alt="" />
+              <h4>{item.title}</h4>
+            </Link>
           </Card>
         )
       })}
     </Grid>
+  );
+    
+  
 }
 
 const Grid = styled.div`
